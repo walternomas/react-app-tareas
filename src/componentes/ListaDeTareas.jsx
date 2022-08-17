@@ -5,7 +5,15 @@ import Tarea from './Tarea';
 
 function ListaDeTareas() {
 
-  const [tareas, setTareas] = useState([{ texto:'nueva tarea', completada:true }]);
+  const [tareas, setTareas] = useState([{ texto: 'nueva tarea', completada: true }]);
+
+  const agregarTarea = tarea => {
+    setTareas([...tareas, tarea]);
+  };
+
+  const eliminarTarea = tarea => {
+    setTareas(tareas.filter(t => t !== tarea));
+  };
 
   return (
     <>
