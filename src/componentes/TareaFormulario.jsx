@@ -10,14 +10,16 @@ function TareaFormulario(props) {
   };
 
   const manejarEnvio = e => {
+    e.preventDefault();
     const tareaNueva = {
       id: '4654',
-      texto: 'Tarea'
+      texto: input,
+      completada: false
     }
   };
 
   return (
-    <form className='tarea-formulario'>
+    <form className='tarea-formulario' onSubmit={manejarEnvio}>
       <input 
         type="text" 
         className='tarea-input' 
