@@ -5,7 +5,7 @@ import Tarea from './Tarea';
 
 function ListaDeTareas() {
 
-  const [tareas, setTareas] = useState([{ texto: 'nueva tarea', completada: true }]);
+  const [tareas, setTareas] = useState([]);
 
   const agregarTarea = tarea => {
     if(tarea.texto.trim()) {
