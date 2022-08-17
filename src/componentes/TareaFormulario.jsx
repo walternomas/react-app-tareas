@@ -1,4 +1,5 @@
 import React from 'react';
+import '../hojas-de-estilo/TareaFormulario.css';
 
 function TareaFormulario(props) {
   return (
