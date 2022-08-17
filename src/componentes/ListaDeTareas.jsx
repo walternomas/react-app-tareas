@@ -8,7 +8,11 @@ function ListaDeTareas() {
   const [tareas, setTareas] = useState([{ texto: 'nueva tarea', completada: true }]);
 
   const agregarTarea = tarea => {
-    setTareas([...tareas, tarea]);
+    if(tarea.texto.trim()) {
+      tarea.texto = tarea.texto.trim();
+      const tareasActualizadas = [tarea, ...tareas];
+      setTareas(tareasActualizadas);
+    }
   };
 
   const eliminarTarea = tarea => {
@@ -17,7 +21,7 @@ function ListaDeTareas() {
 
   return (
     <>
-      <TareaFormulario />
+      <TareaFormulario onSubmit={agregarTarea} />
       <div className='tareas-lista-contenedor'>
         {
           tareas.map((tarea) =>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import '../hojas-de-estilo/TareaFormulario.css';
+import {v4 as uuidv4} from 'uuid';
 
 function TareaFormulario(props) {
 
-  const [input, setInput] = setState('');
+  const [input, setInput] = useState('');
 
   const manejarCambio = e => {
     setInput(e.target.value);
@@ -12,7 +13,7 @@ function TareaFormulario(props) {
   const manejarEnvio = e => {
     e.preventDefault();
     const tareaNueva = {
-      id: '4654',
+      id: uuidv4(),
       texto: input,
       completada: false
     }
