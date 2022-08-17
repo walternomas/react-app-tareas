@@ -28,7 +28,7 @@ function ListaDeTareas() {
       return tarea;
     });
     setTareas(tareasActualizadas);
-  }
+  };
 
   return (
     <>
