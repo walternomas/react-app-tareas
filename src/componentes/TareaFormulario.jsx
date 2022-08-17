@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../hojas-de-estilo/TareaFormulario.css';
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 function TareaFormulario(props) {
 
@@ -17,16 +17,17 @@ function TareaFormulario(props) {
       texto: input,
       completada: false
     }
+    props.onSubmit(tareaNueva);
   };
 
   return (
     <form className='tarea-formulario' onSubmit={manejarEnvio}>
-      <input 
-        type="text" 
-        className='tarea-input' 
-        placeholder='Escribe una Tarea' 
+      <input
+        type="text"
+        className='tarea-input'
+        placeholder='Escribe una Tarea'
         name='texto'
-        onChange={manejarCambio} 
+        onChange={manejarCambio}
       />
       <button className='tarea-boton'>Agregar Tarea</button>
     </form>
